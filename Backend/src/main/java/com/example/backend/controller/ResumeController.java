@@ -9,7 +9,7 @@ import java.io.File;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class ResumeController {
 
     private static final String RESUME_PATH = "uploads/resume.pdf";
