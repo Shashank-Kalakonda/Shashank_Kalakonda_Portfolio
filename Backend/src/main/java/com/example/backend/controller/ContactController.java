@@ -13,6 +13,11 @@ public class ContactController {
     @Autowired
     private EmailService emailService;
 
+    @GetMapping("/test")
+    public String test() {
+        return "Backend is running on Render";
+    }
+
     @PostMapping
     public String sendMessage(@RequestBody ContactRequest request) {
 

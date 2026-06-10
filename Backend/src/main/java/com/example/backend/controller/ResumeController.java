@@ -14,6 +14,7 @@ public class ResumeController {
 
     private static final String RESUME_PATH = "uploads/resume.pdf";
 
+
     // VIEW (inline for browser embedding)
     @GetMapping("/resume/view")
     public ResponseEntity<Resource> viewResume() {
