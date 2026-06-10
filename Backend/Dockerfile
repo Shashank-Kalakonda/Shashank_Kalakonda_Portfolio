@@ -4,8 +4,10 @@ WORKDIR /app
 
 COPY . .
 
-RUN mvn clean install -DskipTests
+RUN mvn clean package -DskipTests
+
+RUN ls -la target
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "target/*.jar"]
+CMD ["sh", "-c", "java -jar $(ls target/*.jar | head -n 1)"]
