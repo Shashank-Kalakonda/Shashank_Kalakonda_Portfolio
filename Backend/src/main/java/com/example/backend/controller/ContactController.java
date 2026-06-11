@@ -21,12 +21,16 @@ public class ContactController {
     @PostMapping
     public String sendMessage(@RequestBody ContactRequest request) {
 
-        emailService.sendEmail(
-                request.getEmail(),
-                request.getName(),
-                request.getMessage()
-        );
-
-        return "Message sent successfully!";
+        try {
+            emailService.sendEmail(
+                    request.getEmail(),
+                    request.getName(),
+                    request.getMessage()
+            );
+            return "Message sent successfully!";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "ERROR: " + e.getMessage();
+        }
     }
 }
